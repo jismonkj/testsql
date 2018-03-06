@@ -1,6 +1,23 @@
-
 runtime: php55
 api_version: 1
+
 handlers:
 - url: /
   script: index.php
+
+- url: /index\.html
+  script: index.php
+
+- url: /stylesheets
+  static_dir: /
+
+- url: /(.*\.(gif|png|jpg))$
+  static_files: static/\1
+  upload: static/.*\.(gif|png|jpg)$
+
+- url: /admin/.*
+  script: admin.php
+  login: admin
+
+- url: /.*
+  script: not_found.php
