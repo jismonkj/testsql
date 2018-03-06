@@ -5,7 +5,7 @@ handlers:
 - url: /
   script: index.php
   
-  - url: /style.css
+- url: /style.css
   script: style.css
 
 - url: /index\.html
